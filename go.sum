@@ -1,5 +1,5 @@
-github.com/belskirill/auth-service-go v0.0.2 h1:zRhfrYyEjiVBAbVtb4BTYxTK9Rvkpi6cIq3jaqrs7+k=
-github.com/belskirill/auth-service-go v0.0.2/go.mod h1:8b++RWA4AUM0AZGXQw7nvWcTt+9cbyXRp2t+QZDKH84=
+github.com/belskirill/proto-api-auth v0.0.3 h1:XizDWQpiPi9RWBGEaOtrDcIuZHQnqV/wG0Mz0Ufm4BE=
+github.com/belskirill/proto-api-auth v0.0.3/go.mod h1:AwGbkv4AFkhdKXmKxsc7IZ6i2Z/uyzJCUJrB/HNfNL0=
 github.com/caarlos0/env/v10 v10.0.0 h1:yIHUBZGsyqCnpTkbjk8asUlx6RFhhEs+h7TOBdgdzXA=
 github.com/caarlos0/env/v10 v10.0.0/go.mod h1:ZfulV76NvVPw3tm591U4SwL3Xx9ldzBP9aGxzeN7G18=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
