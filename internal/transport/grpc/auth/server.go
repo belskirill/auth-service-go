@@ -22,16 +22,30 @@ func RegisterAuthAPIServer(srv *grpc.Server, auth Auth) {
 }
 
 func (a *authAPI) Login(ctx context.Context, req *ssov1.LoginRequest) (*ssov1.LoginResponse, error) {
-	if err := a.auth.Login(ctx, auth.Login{
+	token, err := a.auth.Login(ctx, auth.Login{
 		Email:    req.Email,
 		Password: req.Password,
-	}); err != nil {
-		return nil, status.Errorf(codes.Unauthenticated, "invalid credentials: %v", err)
+	})
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "Internal server error")
 	}
 
-	return &ssov1.LoginResponse{}, nil
+	return &ssov1.LoginResponse{
+		Token: token,
+	}, nil
 }
 
 func (a *authAPI) Register(ctx context.Context, req *ssov1.RegisterRequest) (*ssov1.RegisterResponse, error) {
-	panic("implement me")
+	id, err := a.auth.Register(ctx, auth.Register{
+		Email:    req.Email,
+		Password: req.Password,
+	})
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "Internal server error")
+	}
+
+	return &ssov1.RegisterResponse{
+		UserId: id,
+	}, nil
+
 }

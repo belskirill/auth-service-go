@@ -24,7 +24,7 @@ func main() {
 	cfg := config.LoadConfig()
 	logger := log.SetupZapLogger(cfg.Env)
 
-	application := app.NewApp(logger, cfg.GRPC.Port)
+	application := app.NewApp(ctx, cfg.DataBase.DSN(), logger, cfg.GRPC.Port)
 
 	var wg sync.WaitGroup
 	wg.Add(1)
