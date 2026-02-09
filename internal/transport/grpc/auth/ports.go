@@ -6,5 +6,6 @@ import (
 )
 
 type Auth interface {
-	Login(ctx context.Context, login auth.Login) error
+	Login(ctx context.Context, login auth.Login) (string, error)
+	Register(ctx context.Context, register auth.Register) (int64, error)
 }
