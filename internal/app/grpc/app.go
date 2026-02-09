@@ -18,10 +18,11 @@ type App struct {
 func NewAppGRPC(
 	logger *zap.Logger,
 	grpcPort int,
+	authService auth.Auth,
 ) *App {
 	GRPCServer := grpc.NewServer()
 
-	auth.RegisterAuthAPIServer(GRPCServer)
+	auth.RegisterAuthAPIServer(GRPCServer, authService)
 
 	return &App{
 		grpcServer: GRPCServer,
